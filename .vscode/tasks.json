@@ -1,0 +1,11 @@
+{
+	"tasks": [
+		{
+			"label": "dotnet: build",
+			"type": "dotnet",
+			"task": "build",
+			"group": "build",
+			"problemMatcher": [],
+		}
+	]
+}

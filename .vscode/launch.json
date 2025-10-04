@@ -1,0 +1,54 @@
+{
+	"configurations": [
+		{
+			"name": ".NET Core Launch (console)",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "dotnet: build",
+			"program": "${workspaceFolder}/bin/Debug/net9.0/TaskManagement",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"stopAtEntry": false,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": ".NET Core Launch (console) - list",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "dotnet: build",
+			"program": "${workspaceFolder}/bin/Debug/net9.0/TaskManagement",
+			"args": ["list"],
+			"cwd": "${workspaceFolder}",
+			"stopAtEntry": false,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": ".NET Core Launch (console) - update",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "dotnet: build",
+			"program": "${workspaceFolder}/bin/Debug/net9.0/TaskManagement",
+			"args": ["update", "1", "true"],
+			"cwd": "${workspaceFolder}",
+			"stopAtEntry": false,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": ".NET Core Launch (console) - create",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "dotnet: build",
+			"program": "${workspaceFolder}/bin/Debug/net9.0/TaskManagement",
+			"args": ["create", "Task", "Test Task"],
+			"cwd": "${workspaceFolder}",
+			"stopAtEntry": false,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "C#: TaskManagement Debug",
+			"type": "dotnet",
+			"request": "launch",
+			"projectPath": "${workspaceFolder}/TaskManagement.csproj"
+		}
+	]
+}
