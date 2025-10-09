@@ -5,8 +5,6 @@ using TaskManagement.Repositories;
 using Spectre.Console;
 using TaskManagement.Models;
 using System.CommandLine.Rendering;
-using Polly.Retry;
-using Polly;
 using TaskManagement.Exceptions;
 using System;
 

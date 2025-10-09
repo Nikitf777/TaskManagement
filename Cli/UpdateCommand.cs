@@ -1,6 +1,5 @@
 using System;
 using DotMake.CommandLine;
-using TaskManagement.Exceptions;
 using TaskManagement.Repositories;
 
 namespace TaskManagement.Cli;
