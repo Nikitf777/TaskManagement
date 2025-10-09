@@ -14,10 +14,10 @@ public class UpdateCommand
 
 	public void Run()
 	{
-		var repo = new TaskRepository(LocalStorageManager.ConnectionString);
+		var taskRepo = new TaskRepository(LocalStorageManager.ConnectionString);
 		RootCliCommand.RepositoryAccessRetryPolicy.Execute(() => {
 			try {
-				repo.UpdateCompletionStatus(this.Id, this.Status);
+				taskRepo.UpdateCompletionStatus(this.Id, this.Status);
 				Console.WriteLine("The completion status was updated successfully.");
 			} catch (Exception e) {
 				Console.Error.WriteLine(e.Message);

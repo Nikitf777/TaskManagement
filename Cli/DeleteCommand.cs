@@ -12,9 +12,9 @@ public class DeleteCommand
 
 	public void Run()
 	{
-		var repo = new TaskRepository(LocalStorageManager.ConnectionString);
+		var taskRepo = new TaskRepository(LocalStorageManager.ConnectionString);
 		try {
-			repo.Delete(this.Id);
+			taskRepo.Delete(this.Id);
 			Console.WriteLine("The task was successfully deleted.");
 		} catch (Exception e) {
 			Console.Error.WriteLine(e.Message);

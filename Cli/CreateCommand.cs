@@ -16,11 +16,11 @@ public class CreateCommand
 
 	public void Run()
 	{
-		var repo = new TaskRepository(LocalStorageManager.ConnectionString);
+		var taskRepo = new TaskRepository(LocalStorageManager.ConnectionString);
 		var createdAt = DateTime.UtcNow;
 		RootCliCommand.RepositoryAccessRetryPolicy.Execute(() => {
 			try {
-				var id = repo.Create(new TaskDomain(this.Title, this.Description ?? "", createdAt));
+				var id = taskRepo.Create(new TaskDomain(this.Title, this.Description ?? "", createdAt));
 				Console.WriteLine($"A task with id {id} is successfully created.");
 			} catch (IncorrectDbFileException) {
 				throw;

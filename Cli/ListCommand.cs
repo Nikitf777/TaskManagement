@@ -14,10 +14,10 @@ public class ListCommand
 {
 	public void Run()
 	{
-		var repo = new TaskRepository(LocalStorageManager.ConnectionString);
+		var taskRepo = new TaskRepository(LocalStorageManager.ConnectionString);
 		RootCliCommand.RepositoryAccessRetryPolicy.Execute(() => {
 			try {
-				var tasks = repo.GetTasks();
+				var tasks = taskRepo.GetTasks();
 				var table = new Table();
 				_ = table.AddColumns(
 					nameof(TaskDomain.Id),
