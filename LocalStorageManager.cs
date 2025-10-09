@@ -40,7 +40,7 @@ public static class LocalStorageManager
 			case (int)SqliteErrorCodes.SQLITE_CANTOPEN: {
 				_ = Directory.CreateDirectory(AppDataFolderPath);
 				InitializeDb();
-				break;
+				throw new NoLocalDirectoryException($"The local storage directory '{AppDataFolderPath}' didn't exist, so it was created.");
 			}
 			default: {
 				throw e;
