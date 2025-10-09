@@ -5,7 +5,6 @@ using TaskManagement.Repositories;
 using Spectre.Console;
 using TaskManagement.Models;
 using System.CommandLine.Rendering;
-using TaskManagement.Exceptions;
 using System;
 
 namespace TaskManagement.Cli;
@@ -34,9 +33,6 @@ public class ListCommand
 				}
 
 				AnsiConsole.Write(table);
-			} catch (IncorrectDbFileException) {
-				Console.WriteLine("Tasks database was initialized.");
-				throw;
 			} catch (Exception e) {
 				Console.Error.Write(e.Message);
 			}
