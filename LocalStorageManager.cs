@@ -29,7 +29,7 @@ public static class LocalStorageManager
 			case (int)SqliteErrorCodes.SQLITE_ERROR: {
 				if (e.Message == $"SQLite Error 1: 'no such table: {TaskDb.TableName}'.") {
 					InitializeDb();
-					throw new IncorrectDbFileException($"The database file didn't contain the necessary '${TaskDb.TableName}' table, so it was created.");
+					throw new IncorrectDbFileException($"The database file didn't contain the necessary '{TaskDb.TableName}' table, so it was created.");
 				}
 				break;
 			}
