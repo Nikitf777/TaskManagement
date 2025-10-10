@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CaseConverter" Version="2.0.1" />
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="DotMake.CommandLine" Version="2.8.1" />
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.9" />

@@ -6,6 +6,7 @@ using Spectre.Console;
 using TaskManagement.Models;
 using System.CommandLine.Rendering;
 using System;
+using CaseConverter;
 
 namespace TaskManagement.Cli;
 
@@ -20,7 +21,7 @@ public class ListCommand
 				var tasks = taskRepo.GetTasks();
 				var table = new Table();
 				foreach (var property in typeof(TaskDomain).GetProperties()) {
-					_ = table.AddColumn(property.Name);
+					_ = table.AddColumn(property.Name.SplitCamelCase());
 				}
 
 				foreach (var taskDb in tasks) {
