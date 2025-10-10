@@ -19,13 +19,9 @@ public class ListCommand
 			try {
 				var tasks = taskRepo.GetTasks();
 				var table = new Table();
-				_ = table.AddColumns(
-					nameof(TaskDomain.Id),
-					nameof(TaskDomain.Title),
-					nameof(TaskDomain.Description),
-					nameof(TaskDomain.IsCompleted),
-					nameof(TaskDomain.CreatedAt)
-				);
+				foreach (var property in typeof(TaskDomain).GetProperties()) {
+					_ = table.AddColumn(property.Name);
+				}
 
 				foreach (var taskDb in tasks) {
 					var task = new TaskDomain(taskDb);
