@@ -29,7 +29,7 @@ public class ListCommand
 
 				foreach (var taskDb in tasks) {
 					var task = new TaskDomain(taskDb);
-					_ = table.AddRow(task.Id.ToString(new ConsoleFormatInfo()), task.Title, task.Description, task.IsCompleted.ToString(), task.CreatedAt.ToString(new ConsoleFormatInfo()));
+					_ = table.AddRow(task.Id.ToString(new ConsoleFormatInfo()), task.Title, task.Description, task.IsCompleted.ToString(), task.CreatedAt.ToLocalTime().ToString(new ConsoleFormatInfo()));
 				}
 
 				AnsiConsole.Write(table);
