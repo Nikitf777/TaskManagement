@@ -14,7 +14,8 @@ public class RootCliCommand
 	static RootCliCommand()
 	{
 		RepositoryAccessRetryPolicy = Policy
-			.Handle<IncorrectDbFileException>()
+			.Handle<NoLocalDirectoryException>()
+			.Or<IncorrectDbFileException>()
 			.WaitAndRetry(
 				retryCount: 2,
 				sleepDurationProvider: (retryCount) =>

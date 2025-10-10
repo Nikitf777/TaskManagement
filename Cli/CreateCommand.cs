@@ -22,8 +22,6 @@ public class CreateCommand
 			try {
 				var id = taskRepo.Create(new TaskDomain(this.Title, this.Description ?? "", createdAt));
 				Console.WriteLine($"A task with id {id} is successfully created.");
-			} catch (IncorrectDbFileException) {
-				throw;
 			} catch (TaskCreationException e) {
 				Console.Error.WriteLine(e);
 			}
